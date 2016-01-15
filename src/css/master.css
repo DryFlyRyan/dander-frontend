@@ -57,3 +57,7 @@ body * {
 #dislike {
   padding: 15px 70px;
 }
+
+#contact-shelter {
+  display: none;
+}
