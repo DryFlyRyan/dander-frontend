@@ -83,8 +83,34 @@ function saveDisLike() {
     })
 }
 
+function updateDislike(){
+  $('body').on('click', '.dislikeButton', function(){
+    console.log('updateDislike')
+    var token = localStorage.getItem('token')
+    var user = getUser();
+    var likeData = {
+      user_id: user.id,
+      petfinder_id: $(this).data("id"),
+      liked: false
+    }
+    console.log('Submitting this data to server to save the dislike: ' + JSON.stringify(likeData))
+    $.ajax({
+      method: "POST",
+      url: "https://dander.herokuapp.com/connections/unfriend",
+      data: likeData
+    })
+      .done(function(msg) {
+        console.log('Dislike saved: ' + msg)
+      })
+      .fail(function(msg) {
+        console.log('Failed to save: ' + msg)
+      })
+  })
+}
+
 module.exports = {
   handleLike: handleLike,
   handleDisLike: handleDisLike,
-  handleNext: handleNext
+  handleNext: handleNext,
+  updateDislike: updateDislike,
 }
