@@ -36,10 +36,16 @@ body * {
 
 #fixed-tab-2 .mdl-card__media {
   background: #FFF;
-  padding: 10px;
-  margin-bottom: 20px;
+  /*padding: 10px;
+  margin-bottom: 20px;*/
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
 }
 
+#fixed-tab-2 .mdl-card__media img {
+  width: 100%;
+}
 /* Loading spinner */
 .spinner {
   padding-top: 200px;
