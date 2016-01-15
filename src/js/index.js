@@ -12,7 +12,7 @@ function getUser() {
 }
 var user = getUser();
 if(user){
-var zip = user.zipcode || ""
+var zip = "/?zipcode="+user.zipcode || ""
 } else {
   var zip = ""
 }
