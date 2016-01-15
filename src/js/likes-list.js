@@ -16,18 +16,20 @@ function handleDisplayLikes() {
       method: 'get'
     })
       .then(function(connectionsData) {
-        console.log(connectionsData)
+        console.log(connectionsData[0])
         // Clear the likes list
         $('#fixed-tab-2').empty()
         // For every pet in the list, create a card and add them to the page
+
         var length = connectionsData.length
         for (var i=0; i<length; i++) {
           var pet = connectionsData[i]
           // Create a blank card and put it on the page
           var blankCard =
-            '<div class="puppy-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">' +
+            '<div id="puppy-card-' + i + '" class="puppy-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">' +
               '<div class="mdl-card__media">' +
-                '<img class= "profile-photo-' + i + '" src="" width="100%" alt="" style="padding:0px;"/>' +
+                '<img class="profile-photo-' + i +
+                 '" src="" width="100%" alt="" style="padding:0px;"/>' +
               '</div>' +
               '<div class="mdl-card__title">' +
                 '<h2 class="name-' + i + ' mdl-card__title-text"></h2>' +
@@ -40,7 +42,8 @@ function handleDisplayLikes() {
               '</div>' +
             '</div>'
           $('#fixed-tab-2').append(blankCard)
-
+          $('#puppy-card-' + i).append('<div id="shelter-info-' + i + '" class="mdl-card__supporting-text"></div>')
+          $('#shelter-info-' + i).text(pet.contact.email[i]).hide()
           // Fill out the card with the pet's info
           $('.name-'+i).text(pet.name)
           if (pet.sex === 'M')
