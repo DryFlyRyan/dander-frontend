@@ -22,7 +22,7 @@ function handleLogin() {
       console.log('Success. Here\'s the response: ' + response.token)
       localStorage.setItem('token', response.token)
       console.log('Here is the user: ' + getUser().first_name)
-      updateName()
+      message('You are logged in!')
       window.location = '/'
     }).fail(function(msg) {
       console.error(msg)
@@ -54,26 +54,29 @@ function handleSignup() {
     })
       .done(function(results) {
         console.log('Sign up successful:', results)
+        message('Successfully signed up! Log in below.')
       })
       .fail(function() {
         console.log('Sign up failed.')
+        message('Hm, something went wrong. Please try again.')
       })
   })
 }
 
-function updateName() {
-  if (getUser()) {
-    var name = getUser().first_name
-    $('.user-name').text(name)
-  } else {
-    $('.user-name').text('Nobody')
-  }
+function message(message) {
+  $('#welcome-message').text(message)
 }
+
+function showUserName() {
+  console.log(getUser().first_name)
+  $('.user-name').text(getUser().first_name)
+}
+
 
 function logOut() {
   console.log('Logged out')
   localStorage.token = ''
-  updateName()
+  message('You are logged out.')
   window.location = '/'
 }
 
@@ -89,5 +92,7 @@ $(function() {
   handleLogout()
   handleSignup()
   // Every time the page loads, update the display of user name on the page.
-  updateName()
+  showUserName()
+  // Clear the message section
+  message('')
 })
