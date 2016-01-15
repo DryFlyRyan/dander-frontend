@@ -9,8 +9,8 @@ function getUser() {
 function handleLogin() {
   $('.login').click(function(event) {
     var userCredentials = {
-      email:    $('#email').val(),
-      password: $('#password').val()
+      email:    $('#login_email').val(),
+      password: $('#login_password').val()
     }
     $.ajax(
       {
@@ -23,8 +23,9 @@ function handleLogin() {
       localStorage.setItem('token', response.token)
       console.log('Here is the user: ' + getUser().first_name)
       updateName()
-      // window.location = '/'
+      window.location = '/'
     }).fail(function(msg) {
+      console.error(msg)
       console.log('Failed to log in')
     })
   })
@@ -39,11 +40,11 @@ function handleLogout() {
 function handleSignup() {
   $('.sign-up').click(function() {
     var userInfo = {
-      first_name: $('.signup-form #first-name').val(),
-      last_name:  $('.signup-form #last-name').val(),
-      email:      $('.signup-form #email').val(),
-      password:   $('.signup-form #password').val(),
-      zipcode:    $('.signup-form #zipcode').val()
+      first_name: $('#first-name').val(),
+      last_name:  $('#last-name').val(),
+      email:      $('#email').val(),
+      password:   $('#password').val(),
+      zipcode:    $('#zipcode').val()
     }
 
     $.ajax({
@@ -73,7 +74,7 @@ function logOut() {
   console.log('Logged out')
   localStorage.token = ''
   updateName()
-  // window.location = '/'
+  window.location = '/'
 }
 
 $(function() {
