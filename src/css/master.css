@@ -46,6 +46,13 @@ body * {
 #fixed-tab-2 .mdl-card__media img {
   width: 100%;
 }
+
+#fixed-tab-2 .mdl-card__supporting-text {
+  /*padding-left: 15px;*/
+}
+
+
+
 /* Loading spinner */
 .spinner {
   padding-top: 200px;

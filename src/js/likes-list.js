@@ -30,9 +30,9 @@ function handleDisplayLikes() {
                 '<img class= "profile-photo-' + i + '" src="" width="100%" alt="" style="padding:0px;"/>' +
               '</div>' +
               '<div class="mdl-card__title">' +
-                '<h2 class="name-' + i + '" mdl-card__title-text"></h2>' +
+                '<h2 class="name-' + i + ' mdl-card__title-text"></h2>' +
               '</div>' +
-              '<div class="pet-info-' + i + '" mdl-card__supporting-text"></div>' +
+              '<div class="pet-info-' + i + ' mdl-card__supporting-text"></div>' +
               '<div class="mdl-card__actions mdl-card--border">' +
                 '<a id="" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="#">Contact shelter</a>' +
               '</div>' +
