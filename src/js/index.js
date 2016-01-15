@@ -22,6 +22,7 @@ $(function() {
       liking.handleLike(pets)
       liking.handleDisLike(pets)
       liking.handleNext(pets)
+      liking.updateDislike()
 
       // Handle the behavior on the Likes tab
       likes.handleDisplayLikes()
