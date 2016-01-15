@@ -5,8 +5,19 @@ var initialize = require('./initialize')
 var $ = require('jquery')
 var fetch = require('./fetch')
 
+function getUser() {
+  if(localStorage.token) {
+    return JSON.parse(atob(localStorage.token.split('.')[1])).user;
+  }
+}
+var user = getUser();
+if(user){
+var zip = user.zipcode || ""
+} else {
+  var zip = ""
+}
 // var puppyURL = __dirname + 'fake-data-2.json'
-var puppyURL = 'https://dander.herokuapp.com/dogs'
+var puppyURL = 'https://dander.herokuapp.com/dogs'+zip
 var getPuppies = fetch(puppyURL)
 
 // We won't have very much code here, just invocations of functions declared elsewhere.
