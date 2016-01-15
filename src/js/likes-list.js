@@ -37,7 +37,7 @@ function handleDisplayLikes() {
               '<div class="pet-info-' + i + ' mdl-card__supporting-text"></div>' +
               '<div class="mdl-card__actions mdl-card--border">' +
                 '<a id="contact-shelter" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="#">Contact shelter</a>' +
-                '<a data-id="'+pet.petfinder_id+'" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect dislikeButton" href="#">Unfriend</a>' +
+                '<a data-id="'+pet.petfinder_id+'" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect dislikeButton" href="#">Unlike</a>' +
 
               '</div>' +
             '</div>'
