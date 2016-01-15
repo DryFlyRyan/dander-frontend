@@ -13,11 +13,13 @@ function getUser() {
 var user = getUser();
 if(user){
 var zip = "/?zipcode="+user.zipcode || ""
+var checkid = "&checkid="+user.id || ""
 } else {
   var zip = ""
+  var checkid = ""
 }
 // var puppyURL = __dirname + 'fake-data-2.json'
-var puppyURL = 'https://dander.herokuapp.com/dogs'+zip
+var puppyURL = 'https://dander.herokuapp.com/dogs'+zip+checkid
 var getPuppies = fetch(puppyURL)
 
 // We won't have very much code here, just invocations of functions declared elsewhere.
