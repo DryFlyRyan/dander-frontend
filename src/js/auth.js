@@ -68,8 +68,10 @@ function message(message) {
 }
 
 function showUserName() {
-  console.log(getUser().first_name)
-  $('.user-name').text(getUser().first_name)
+  if (getUser()) {
+    console.log(getUser().first_name)
+    $('.user-name').text(getUser().first_name)
+  }
 }
 
 
