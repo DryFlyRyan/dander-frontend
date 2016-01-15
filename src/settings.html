@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./css/master.css" media="screen" charset="utf-8">
     <script src="./js/main.js" type="text/javascript"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       if (window.location.search) {
         var splits = window.location.search.split('=')
         if (splits.length > 1 ) {
@@ -15,7 +15,7 @@
           sessionStorage.setItem('token', token)
         }
       }
-    </script>
+    </script> -->
     <title>Dander</title>
   </head>
   <body>
@@ -62,13 +62,13 @@
             <br>
           <h3>Login</h3>
             <div class="mdl-textfield mdl-js-textfield">
-              <input id= "email" class="mdl-textfield__input" type="email">
-              <label for="email" class="mdl-textfield__label">Email</label>
+              <input id= "login_email" class="mdl-textfield__input" type="email">
+              <label for="login_email" class="mdl-textfield__label">Email</label>
               <span class="mdl-textfield__error">Please use a valid email address.</span>
             </div>
             <div class="mdl-textfield mdl-js-textfield">
-              <input id= "password" class="mdl-textfield__input" type="password">
-              <label for="password" class="mdl-textfield__label">Password</label>
+              <input id= "login_password" class="mdl-textfield__input" type="password">
+              <label for="login_password" class="mdl-textfield__label">Password</label>
             </div>
             <div class="mdl-cell">
               <button class="login mdl-button mdl-js-button mdl-button--raised mdl-button--accent" name="login">Log in</button>
