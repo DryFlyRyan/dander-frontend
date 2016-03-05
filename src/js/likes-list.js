@@ -16,9 +16,6 @@ function handleDisplayLikes() {
       method: 'get'
     })
       .then(function(connectionsData) {
-        var shelterPhoneNumber = connectionsData[0].contact.phone[0]
-        var cleanedShelterPhoneNumber = removeNonNumerals(shelterPhoneNumber)
-
         // Clear the likes list
         $('#fixed-tab-2').empty()
 
@@ -26,6 +23,10 @@ function handleDisplayLikes() {
         var length = connectionsData.length
         for (var i=0; i<length; i++) {
           var pet = connectionsData[i]
+          console.log('pet', pet);
+          var shelterPhoneNumber = pet.contact.phone[0]
+          var cleanedShelterPhoneNumber = removeNonNumerals(shelterPhoneNumber)
+
           // Create a blank card and put it on the page
           var blankCard =
             '<div id="puppy-card-' + i + '" class="puppy-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">' +
@@ -40,17 +41,17 @@ function handleDisplayLikes() {
               '<div class="mdl-card__actions mdl-card--border">' +
                 '<a class="contact-shelter mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=tel:"' +
                 cleanedShelterPhoneNumber + '"' +
-                '>Contact the shelter: ' +
-                shelterPhoneNumber +
+                '>Call the shelter' +
                 '</a>' +
-
                 '<a data-id="' + pet.petfinder_id + '" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect dislikeButton" href="#">Unlike</a>' +
-
+                '<div class="mdl-card__supporting-text">' +
+                'Shelter phone: ' +
+                 shelterPhoneNumber +
+                 '</div>' +
               '</div>' +
             '</div>'
           $('#fixed-tab-2').append(blankCard)
-          $('#puppy-card-' + i).append('<div id="shelter-info-' + i + '" class="mdl-card__supporting-text"></div>')
-          $('#shelter-info-' + i).text(pet.contact.email[i])
+        
           // Fill out the card with the pet's info
           $('.name-'+i).text(pet.name)
           if (pet.sex === 'M')
