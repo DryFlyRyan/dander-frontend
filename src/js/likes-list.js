@@ -16,11 +16,13 @@ function handleDisplayLikes() {
       method: 'get'
     })
       .then(function(connectionsData) {
-        console.log(connectionsData[0])
+        var shelterPhoneNumber = connectionsData[0].contact.phone[0]
+        var cleanedShelterPhoneNumber = removeNonNumerals(shelterPhoneNumber)
+
         // Clear the likes list
         $('#fixed-tab-2').empty()
-        // For every pet in the list, create a card and add them to the page
 
+        // For every pet in the list, create a card and add them to the page
         var length = connectionsData.length
         for (var i=0; i<length; i++) {
           var pet = connectionsData[i]
@@ -36,14 +38,19 @@ function handleDisplayLikes() {
               '</div>' +
               '<div class="pet-info-' + i + ' mdl-card__supporting-text"></div>' +
               '<div class="mdl-card__actions mdl-card--border">' +
-                '<a id="contact-shelter" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="#">Contact shelter</a>' +
-                '<a data-id="'+pet.petfinder_id+'" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect dislikeButton" href="#">Unlike</a>' +
+                '<a class="contact-shelter mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=tel:"' +
+                cleanedShelterPhoneNumber + '"' +
+                '>Contact the shelter: ' +
+                shelterPhoneNumber +
+                '</a>' +
+
+                '<a data-id="' + pet.petfinder_id + '" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect dislikeButton" href="#">Unlike</a>' +
 
               '</div>' +
             '</div>'
           $('#fixed-tab-2').append(blankCard)
           $('#puppy-card-' + i).append('<div id="shelter-info-' + i + '" class="mdl-card__supporting-text"></div>')
-          $('#shelter-info-' + i).text(pet.contact.email[i]).hide()
+          $('#shelter-info-' + i).text(pet.contact.email[i])
           // Fill out the card with the pet's info
           $('.name-'+i).text(pet.name)
           if (pet.sex === 'M')
@@ -66,6 +73,17 @@ function handleDisplayLikes() {
         console.log('Failed to get connections.')
       })
   })
+}
+
+function removeNonNumerals(string) {
+  var result = ''
+  var stringArray = string.split('')
+  stringArray.forEach(function(char) {
+    if (char >= '0' && char <= '9') {
+      result += char
+    }
+  })
+  return result
 }
 
 module.exports = {
