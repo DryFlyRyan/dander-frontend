@@ -2,6 +2,9 @@
 
 Front-end client for those of us nipped by puppy love.
 
+## About this branch
+This branch (q2presentation) represents our Front-end code as it appeared for our presentation at Galvanize on January 15, 2016. For the currently deployed code, see the "master" branch.
+
 ## Staging site
 The staging site is deployed [here](https://dander.firebaseapp.com/).
 
