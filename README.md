@@ -3,7 +3,7 @@
 Front-end client for those of us nipped by puppy love.
 
 ## Deployed site
-[dander.co](https://dander.co)
+[dander.co](http://dander.co)
 
 ## Usage
 First, run:
