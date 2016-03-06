@@ -20,7 +20,7 @@ gulp.task('build:html', function() {
 
 gulp.task('build:js', function() {
   return gulp
-    .src('./src/js/*')
+    .src('./src/**/*.js')
     .pipe(webpack(
       {
         output: { filename: './js/main.js' },
