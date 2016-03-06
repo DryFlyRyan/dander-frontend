@@ -2,8 +2,8 @@
 
 Front-end client for those of us nipped by puppy love.
 
-## Staging site
-The staging site is deployed [here](https://dander.firebaseapp.com/).
+## Deployed site
+[dander.co](https://dander.co)
 
 ## Usage
 First, run:
