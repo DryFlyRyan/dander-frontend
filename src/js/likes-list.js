@@ -1,4 +1,4 @@
-var $ = require('jquery')
+// var $ = require('jquery')
 var display = require('./display')
 var petIndex = require('./counter')
 
@@ -51,7 +51,7 @@ function handleDisplayLikes() {
               '</div>' +
             '</div>'
           $('#fixed-tab-2').append(blankCard)
-        
+
           // Fill out the card with the pet's info
           $('.name-'+i).text(pet.name)
           if (pet.sex === 'M')

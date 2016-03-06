@@ -2,7 +2,7 @@
 var liking = require('./liking')
 var likes = require('./likes-list')
 var initialize = require('./initialize')
-var $ = require('jquery')
+// var $ = require('jquery')
 var fetch = require('./fetch')
 
 function getUser() {

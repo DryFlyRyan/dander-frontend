@@ -6,18 +6,15 @@
         $stateProvider
           .state('home', {
             url: '/',
-            templateUrl: 'app/home/home.html',
-            controller: 'MainController as main'
+            templateUrl: 'app/home/home.html'
           })
           .state('likes', {
             url: '/likes',
-            templateUrl: 'app/likes/likes.html',
-            controller: 'MainController as main'
+            templateUrl: 'app/likes/likes.html'
           })
           .state('settings', {
             url: '/settings',
-            templateUrl: 'app/settings/settings.html',
-            controller: 'MainController as main'
+            templateUrl: 'app/settings/settings.html'
           })
 
           $urlRouterProvider.otherwise('/')

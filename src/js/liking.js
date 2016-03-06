@@ -1,4 +1,4 @@
-var $ = require('jquery')
+// var $ = require('jquery')
 var display = require('./display')
 var petIndex = require('./counter')
 

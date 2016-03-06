@@ -1,4 +1,4 @@
-var $ = require('jquery')
+// var $ = require('jquery')
 
 function getUser() {
   if(localStorage.token) {
@@ -8,7 +8,7 @@ function getUser() {
 
 $(function() {
   if (getUser()) {
-    console.log('Youse logged in.')
+    console.log('You\'re logged in.')
     $('#for-not-logged-in').hide()
     $('#for-logged-in').show()
   } else {
