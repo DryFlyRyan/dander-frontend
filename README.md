@@ -3,13 +3,13 @@
 Front-end client for those of us nipped by puppy love.
 
 ## About the project branches
-- [deployed](https://github.com/DryFlyRyan/dander-frontend/tree/deployed): Contains the currently deployed code.
+- [deployed](https://github.com/DryFlyRyan/dander-frontend/tree/deployed): Contains the currently code for the deployed site.
 - [q2presentation](https://github.com/DryFlyRyan/dander-frontend/tree/q2presentation): What we presented at Galvanize on January 15, 2016.
-- [ng](https://github.com/DryFlyRyan/dander-frontend/tree/ng): Angularifynig the app. A work in progress.
+- [ng](https://github.com/DryFlyRyan/dander-frontend/tree/ng): Converting the app to Angular. A work in progress.
 
 
 ## Deployed site
-The site is deployed at [dander.co](https://dander.co/).
+The site is deployed at [dander.co](http://dander.co/).
 
 ## Usage
 First, run:
